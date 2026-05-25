@@ -46,39 +46,54 @@ h1, h2, h3, h4 {
 
 /* ==== Hero Section ==== */
 .hero {
-    min-height: 80vh;
+    position: relative;
+    background-color: var(--col-primary);
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, var(--col-primary) 0%, var(--col-tertiary) 100%);
-    color: white;
-    position: relative;
+    padding-bottom: 2rem; /* Kept bottom padding so text has space */
     overflow: hidden;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1000px;
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    animation: fadeIn 1s ease-out;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(4,30,66,0.9) 0%, rgba(210,27,109,0.7) 100%);
+    z-index: 1;
+}
+
+.hero-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2rem;
-    text-align: left;
+    max-width: 1200px;
+    width: 100%;
+    z-index: 2;
 }
 
 .hero-image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    flex: 0 0 300px;
+    max-width: 300px;
+    /* Removed border-radius so it sits flush */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .hero-text-container {
-    flex: 1;
+    color: white;
+    padding: 0 1.5rem;
+    margin-top: 1rem;
 }
 
 @keyframes fadeIn {
@@ -576,7 +591,18 @@ footer {
     .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 0;
+    }
+    
+    .hero-image-container {
+        max-width: 100%;
+        width: 100%;
+        flex: none;
+        box-shadow: none;
+    }
+
+    .hero-image {
+        border-radius: 0;
     }
     
     .welcome-message {
