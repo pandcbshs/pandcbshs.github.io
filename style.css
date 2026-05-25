@@ -525,10 +525,17 @@ main {
 
 .sponsor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1.5rem;
     align-items: center;
     justify-items: center;
+}
+
+@media (max-width: 400px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
 }
 
 .sponsor-logo {
