@@ -599,10 +599,14 @@ footer {
         width: 100%;
         flex: none;
         box-shadow: none;
+        margin: 0;
+        padding: 0;
     }
 
     .hero-image {
         border-radius: 0;
+        width: 100%;
+        object-fit: cover;
     }
     
     .welcome-message {
