@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function formatTime(decimalTime) {
         let hours = Math.floor(decimalTime);
-        let minutes = (decimalTime - hours) * 60;
+        let minutes = Math.round((decimalTime - hours) * 60);
         let period = hours >= 12 ? 'PM' : 'AM';
         
         let displayHours = hours > 12 ? hours - 12 : hours;
         if (displayHours === 0) displayHours = 12; // 12 PM or 12 AM
         
-        let displayMinutes = minutes === 0 ? '00' : minutes.toString();
+        let displayMinutes = minutes.toString().padStart(2, '0');
         
         return `${displayHours}:${displayMinutes} ${period}`;
     }
