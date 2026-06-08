@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- Toggle Sections (Tabs) ---
     window.toggleSection = function(sectionId) {
-        const sections = ['whats-on', 'sponsor-us', 'time-schedule'];
+        const sections = ['whats-on', 'sponsor-us', 'time-schedule', 'event-map'];
         
         // Hide all sections except the target
         sections.forEach(id => {
@@ -58,10 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gather all events from the master list
     const allEvents = [];
     document.querySelectorAll('#events-master-list .event-item').forEach(el => {
+        const titleEl = el.querySelector('.details h4');
+        const venueEl = el.querySelector('.details p');
         allEvents.push({
             start: el.getAttribute('data-start'),
             end: el.getAttribute('data-end'),
             category: el.getAttribute('data-category'),
+            title: titleEl ? titleEl.textContent.trim() : '',
+            venue: venueEl ? venueEl.textContent.trim() : '',
             html: el.innerHTML
         });
     });
@@ -158,5 +162,134 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Initial run
         updateSlider();
+    }
+
+    // --- Interactive Map Pin Setup ---
+    const mapSvg = document.getElementById('bshs-map');
+    const mapDetailCard = document.getElementById('map-detail-card');
+    const mapLocationTitle = document.getElementById('map-location-title');
+    const mapLocationEvents = document.getElementById('map-location-events');
+    const closeMapCard = document.getElementById('close-map-card');
+
+    if (mapSvg) {
+        const venueCoordinates = {
+            'Museum': { x: 140, y: 130 },
+            'Upper Quad': { x: 320, y: 235 },
+            'Quad Stage': { x: 260, y: 180 },
+            'Main Stage': { x: 360, y: 180 },
+            'Marketplace': { x: 150, y: 360 },
+            'Food Bazaar': { x: 110, y: 440 },
+            'Apron Cafe': { x: 265, y: 440 },
+            'Apron': { x: 280, y: 350 },
+            'Cinema 1': { x: 120, y: 230 },
+            'Cinema 2': { x: 160, y: 270 },
+            'ISC Court 1': { x: 585, y: 385 },
+            'ISC Court 2': { x: 685, y: 385 },
+            'ISC Courts 1 & 2': { x: 635, y: 425 },
+            'Oval': { x: 635, y: 220 }
+        };
+
+        // Group events by venue
+        const eventsByVenue = {};
+        allEvents.forEach(evt => {
+            if (evt.venue) {
+                if (!eventsByVenue[evt.venue]) {
+                    eventsByVenue[evt.venue] = [];
+                }
+                eventsByVenue[evt.venue].push(evt);
+            }
+        });
+
+        // Add pins dynamically
+        Object.keys(eventsByVenue).forEach(venueName => {
+            const coords = venueCoordinates[venueName];
+            if (coords) {
+                const pinGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                pinGroup.setAttribute('class', 'map-pin');
+                pinGroup.setAttribute('transform', `translate(${coords.x}, ${coords.y})`);
+                pinGroup.setAttribute('data-venue', venueName);
+
+                const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                ring.setAttribute('cx', '0');
+                ring.setAttribute('cy', '0');
+                ring.setAttribute('r', '14');
+                ring.setAttribute('fill', 'var(--col-secondary)');
+                ring.setAttribute('opacity', '0.4');
+                ring.setAttribute('class', 'pulsing-ring');
+
+                const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                dot.setAttribute('cx', '0');
+                dot.setAttribute('cy', '0');
+                dot.setAttribute('r', '7');
+                dot.setAttribute('fill', 'var(--col-secondary)');
+                dot.setAttribute('stroke', 'white');
+                dot.setAttribute('stroke-width', '2');
+
+                const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+                title.textContent = `${venueName} (${eventsByVenue[venueName].length} events)`;
+
+                pinGroup.appendChild(ring);
+                pinGroup.appendChild(dot);
+                pinGroup.appendChild(title);
+
+                pinGroup.addEventListener('click', () => {
+                    showVenueEvents(venueName, eventsByVenue[venueName]);
+                });
+
+                mapSvg.appendChild(pinGroup);
+            }
+        });
+
+        function showVenueEvents(venueName, events) {
+            events.sort((a, b) => a.start.localeCompare(b.start));
+
+            mapLocationTitle.textContent = venueName;
+            
+            let html = '<ul class="map-event-list">';
+            events.forEach(evt => {
+                const [hStart, mStart] = evt.start.split(':').map(Number);
+                const [hEnd, mEnd] = evt.end.split(':').map(Number);
+                const startDec = hStart + mStart / 60;
+                const endDec = hEnd + mEnd / 60;
+                
+                const timeStr = evt.start === evt.end 
+                    ? formatTime(startDec) 
+                    : `${formatTime(startDec)} - ${formatTime(endDec)}`;
+
+                html += `
+                    <li class="map-event-item">
+                        <div class="map-event-time">${timeStr}</div>
+                        <div class="map-event-title">${evt.title}</div>
+                        <span class="map-event-category">${evt.category}</span>
+                    </li>
+                `;
+            });
+            html += '</ul>';
+            mapLocationEvents.innerHTML = html;
+            
+            // Highlight active pin
+            document.querySelectorAll('.map-pin circle').forEach(c => {
+                if (c.getAttribute('fill') === 'var(--col-accent)') {
+                    c.setAttribute('fill', 'var(--col-secondary)');
+                }
+            });
+            const clickedPin = document.querySelector(`.map-pin[data-venue="${venueName}"] circle:nth-child(2)`);
+            if (clickedPin) {
+                clickedPin.setAttribute('fill', 'var(--col-accent)');
+            }
+        }
+
+        if (closeMapCard) {
+            closeMapCard.addEventListener('click', () => {
+                mapLocationTitle.textContent = 'Select a Location';
+                mapLocationEvents.innerHTML = '<p class="placeholder-text">Click a pin on the map to display the events scheduled for that location.</p>';
+                // Reset pin colors
+                document.querySelectorAll('.map-pin circle').forEach(c => {
+                    if (c.getAttribute('fill') === 'var(--col-accent)') {
+                        c.setAttribute('fill', 'var(--col-secondary)');
+                    }
+                });
+            });
+        }
     }
 });
