@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (closeMapCard) {
             closeMapCard.addEventListener('click', () => {
                 mapLocationTitle.textContent = 'Select a Location';
-                mapLocationEvents.innerHTML = '<p class="placeholder-text">Click a pin on the map to display the events scheduled for that location.</p>';
+                mapLocationEvents.innerHTML = '<p class="placeholder-text">Click a spot on the map to display the events scheduled for that location.</p>';
                 // Reset pin colors
                 document.querySelectorAll('.map-pin circle').forEach(c => {
                     if (c.getAttribute('fill') === 'var(--col-accent)') {
