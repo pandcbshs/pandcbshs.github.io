@@ -209,14 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 pinGroup.setAttribute('transform', `translate(${coords.x}, ${coords.y})`);
                 pinGroup.setAttribute('data-venue', venueName);
 
-                const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                ring.setAttribute('cx', '0');
-                ring.setAttribute('cy', '0');
-                ring.setAttribute('r', '14');
-                ring.setAttribute('fill', 'var(--col-secondary)');
-                ring.setAttribute('opacity', '0.4');
-                ring.setAttribute('class', 'pulsing-ring');
-
                 const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 dot.setAttribute('cx', '0');
                 dot.setAttribute('cy', '0');
@@ -228,7 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
                 title.textContent = `${venueName} (${eventsByVenue[venueName].length} events)`;
 
-                pinGroup.appendChild(ring);
                 pinGroup.appendChild(dot);
                 pinGroup.appendChild(title);
 
@@ -273,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     c.setAttribute('fill', 'var(--col-secondary)');
                 }
             });
-            const clickedPin = document.querySelector(`.map-pin[data-venue="${venueName}"] circle:nth-child(2)`);
+            const clickedPin = document.querySelector(`.map-pin[data-venue="${venueName}"] circle`);
             if (clickedPin) {
                 clickedPin.setAttribute('fill', 'var(--col-accent)');
             }

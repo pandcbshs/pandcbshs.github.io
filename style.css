@@ -634,21 +634,6 @@ footer {
     filter: brightness(1.2);
 }
 
-.pulsing-ring {
-    animation: pulse 2s infinite;
-    transform-origin: center;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.6);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(2.2);
-        opacity: 0;
-    }
-}
 
 .map-detail-card {
     background: white;
