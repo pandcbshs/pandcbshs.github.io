@@ -55,17 +55,19 @@
             <div class="time-filter-container">
                 <p class="filter-instruction">Select a time interval to see activities:</p>
                 <div class="selected-time-display">
-                    <span id="display-start-time">10:00 AM</span> - <span id="display-end-time">6:00 PM</span>
+                    <span id="display-start-time">7:00 AM</span> - <span id="display-end-time">6:00 PM</span>
                 </div>
                 <div class="time-slider-container">
                     <div class="slider-track" id="slider-track"></div>
-                    <input type="range" min="10" max="18" step="0.5" value="12" id="slider-start">
-                    <input type="range" min="10" max="18" step="0.5" value="16" id="slider-end">
+                    <input type="range" min="7" max="18" step="0.5" value="9" id="slider-start">
+                    <input type="range" min="7" max="18" step="0.5" value="17" id="slider-end">
                     <div class="slider-labels">
-                        <span>10 AM</span>
-                        <span>12 PM</span>
-                        <span>2 PM</span>
-                        <span>4 PM</span>
+                        <span>7 AM</span>
+                        <span>9 AM</span>
+                        <span>11 AM</span>
+                        <span>1 PM</span>
+                        <span>3 PM</span>
+                        <span>5 PM</span>
                         <span>6 PM</span>
                     </div>
                 </div>
@@ -81,78 +83,73 @@
             <h2 class="section-title">What's On</h2>
             
             <div class="accordion-container" id="events-master-list">
-                <!-- Music -->
-                <div class="accordion-item" data-category="music">
+                <!-- Alumni -->
+                <div class="accordion-item" data-category="alumni">
                     <button class="accordion-header">
-                        <span class="category-icon">🎵</span> Music
+                        <span class="category-icon">🎓</span> Alumni
                         <span class="toggle-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul class="timetable">
-                            <li class="event-item" data-start="10:00" data-end="11:00" data-category="Music">
-                                <span class="time">10:00 AM</span>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Alumni">
+                                <span class="time">9:00 AM - 1:00 PM</span>
                                 <div class="details">
-                                    <h4>Jazz Band Performance</h4>
-                                    <p>Main Stage</p>
+                                    <h4>School Museum</h4>
+                                    <p>Museum</p>
                                 </div>
                             </li>
-                            <li class="event-item" data-start="13:00" data-end="14:00" data-category="Music">
-                                <span class="time">1:00 PM</span>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Alumni">
+                                <span class="time">9:00 AM - 1:00 PM</span>
                                 <div class="details">
-                                    <h4>School Choir</h4>
-                                    <p>Performance Hall</p>
+                                    <h4>School Tours</h4>
+                                    <p>Museum</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="13:00" data-end="13:30" data-category="Alumni">
+                                <span class="time">1:00 PM - 1:30 PM</span>
+                                <div class="details">
+                                    <h4>Alumni Meetup</h4>
+                                    <p>Upper Quad</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="16:00" data-end="18:00" data-category="Alumni">
+                                <span class="time">4:00 PM - 6:00 PM</span>
+                                <div class="details">
+                                    <h4>Mini Reunion After Party</h4>
+                                    <p>Upper Quad</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Sports -->
-                <div class="accordion-item" data-category="sports">
+                <!-- Dance -->
+                <div class="accordion-item" data-category="dance">
                     <button class="accordion-header">
-                        <span class="category-icon">⚽</span> Sports
+                        <span class="category-icon">💃</span> Dance
                         <span class="toggle-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul class="timetable">
-                            <li class="event-item" data-start="09:00" data-end="10:30" data-category="Sports">
-                                <span class="time">9:00 AM</span>
+                            <li class="event-item" data-start="12:50" data-end="12:55" data-category="Dance">
+                                <span class="time">12:50 PM - 12:55 PM</span>
                                 <div class="details">
-                                    <h4>Rugby Match - First XV</h4>
-                                    <p>Main Oval</p>
+                                    <h4>SH Crew</h4>
+                                    <p>ISC Court 1</p>
                                 </div>
                             </li>
-                            <li class="event-item" data-start="11:30" data-end="13:00" data-category="Sports">
-                                <span class="time">11:30 AM</span>
+                            <li class="event-item" data-start="15:05" data-end="15:10" data-category="Dance">
+                                <span class="time">3:05 PM - 3:10 PM</span>
                                 <div class="details">
-                                    <h4>Basketball Tournament</h4>
-                                    <p>Indoor Courts</p>
+                                    <h4>Bollywood</h4>
+                                    <p>Oval</p>
                                 </div>
                             </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Stalls -->
-                <div class="accordion-item" data-category="stalls">
-                    <button class="accordion-header">
-                        <span class="category-icon">🎪</span> Stalls
-                        <span class="toggle-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul class="timetable">
-                            <li class="event-item" data-start="09:00" data-end="16:00" data-category="Stalls">
-                                <span class="time">All Day</span>
+                            <li class="event-item" data-start="16:00" data-end="16:15" data-category="Dance">
+                                <span class="time">4:00 PM - 4:15 PM</span>
                                 <div class="details">
-                                    <h4>Craft & Handmade Goods</h4>
-                                    <p>Central Courtyard</p>
-                                </div>
-                            </li>
-                            <li class="event-item" data-start="10:00" data-end="14:00" data-category="Stalls">
-                                <span class="time">10:00 AM - 2:00 PM</span>
-                                <div class="details">
-                                    <h4>Second-hand Uniforms</h4>
-                                    <p>Near Gym</p>
+                                    <h4>Flash Mob</h4>
+                                    <p>Oval</p>
                                 </div>
                             </li>
                         </ul>
@@ -168,95 +165,373 @@
                     <div class="accordion-content">
                         <ul class="timetable">
                             <li class="event-item" data-start="09:00" data-end="16:00" data-category="Food">
-                                <span class="time">All Day</span>
+                                <span class="time">9:00 AM - 4:00 PM</span>
                                 <div class="details">
-                                    <h4>Classic BBQ Sizzle</h4>
-                                    <p>Lower Field</p>
+                                    <h4>Aussie BBQ</h4>
+                                    <p>Upper Quad</p>
                                 </div>
                             </li>
-                            <li class="event-item" data-start="11:00" data-end="15:00" data-category="Food">
-                                <span class="time">11:00 AM - 3:00 PM</span>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Food">
+                                <span class="time">9:00 AM - 2:00 PM</span>
                                 <div class="details">
-                                    <h4>International Food Trucks</h4>
-                                    <p>Staff Carpark</p>
+                                    <h4>Bake Sale - Athletics</h4>
+                                    <p>Food Bazaar</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Food">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Bubble Tea - Music</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Food">
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>Chinese</h4>
+                                    <p>Apron Cafe</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Food">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Drinks - Cricket</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Food">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Fairy Floss - SRC</h4>
+                                    <p>Upper Quad</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Food">
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>German BBQ</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Food">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Ice Cones - Dance</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Food">
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>Italian</h4>
+                                    <p>Food Bazaar</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Food">
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>Japanese</h4>
+                                    <p>Food Bazaar</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Food">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Lob A Choc - Football</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Food">
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>Spanish</h4>
+                                    <p>Food Bazaar</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Dancing -->
-                <div class="accordion-item" data-category="dancing">
+                <!-- Music -->
+                <div class="accordion-item" data-category="music">
                     <button class="accordion-header">
-                        <span class="category-icon">💃</span> Dancing
+                        <span class="category-icon">🎵</span> Music
                         <span class="toggle-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul class="timetable">
-                            <li class="event-item" data-start="12:00" data-end="13:00" data-category="Dancing">
-                                <span class="time">12:00 PM</span>
+                            <li class="event-item" data-start="09:00" data-end="10:00" data-category="Music">
+                                <span class="time">9:00 AM - 10:00 AM</span>
                                 <div class="details">
-                                    <h4>Hip Hop Showcase</h4>
-                                    <p>Amphitheatre</p>
+                                    <h4>SH's Got Talent</h4>
+                                    <p>Main Stage</p>
                                 </div>
                             </li>
-                            <li class="event-item" data-start="14:30" data-end="15:30" data-category="Dancing">
-                                <span class="time">2:30 PM</span>
+                            <li class="event-item" data-start="09:00" data-end="11:00" data-category="Music">
+                                <span class="time">9:00 AM - 11:00 AM</span>
                                 <div class="details">
-                                    <h4>Cultural Dance Exhibition</h4>
-                                    <p>Main Hall</p>
+                                    <h4>SH's Got Talent</h4>
+                                    <p>Quad Stage</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="10:00" data-end="11:00" data-category="Music">
+                                <span class="time">10:00 AM - 11:00 AM</span>
+                                <div class="details">
+                                    <h4>Ensembles</h4>
+                                    <p>Main Stage</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="11:00" data-end="12:00" data-category="Music">
+                                <span class="time">11:00 AM - 12:00 PM</span>
+                                <div class="details">
+                                    <h4>Choirs</h4>
+                                    <p>Main Stage</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="12:00" data-end="13:00" data-category="Music">
+                                <span class="time">12:00 PM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>SH's Got Talent</h4>
+                                    <p>Quad Stage</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="12:00" data-end="14:00" data-category="Music">
+                                <span class="time">12:00 PM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>SH's Got Talent</h4>
+                                    <p>Main Stage</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="14:30" data-end="16:00" data-category="Music">
+                                <span class="time">2:30 PM - 4:00 PM</span>
+                                <div class="details">
+                                    <h4>Rock School</h4>
+                                    <p>Main Stage</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Arts -->
-                <div class="accordion-item" data-category="arts">
+                <!-- Past Musicals -->
+                <div class="accordion-item" data-category="past-musicals">
                     <button class="accordion-header">
-                        <span class="category-icon">🎨</span> Arts
+                        <span class="category-icon">🎭</span> Past Musicals
                         <span class="toggle-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul class="timetable">
-                            <li class="event-item" data-start="09:00" data-end="16:00" data-category="Arts">
-                                <span class="time">All Day</span>
+                            <li class="event-item" data-start="09:00" data-end="11:00" data-category="Past Musicals">
+                                <span class="time">9:00 AM - 11:00 AM</span>
                                 <div class="details">
-                                    <h4>Student Art Exhibition</h4>
-                                    <p>Library Foyer</p>
+                                    <h4>1983 Godspell</h4>
+                                    <p>Cinema 1</p>
                                 </div>
                             </li>
-                            <li class="event-item" data-start="11:00" data-end="13:00" data-category="Arts">
+                            <li class="event-item" data-start="09:00" data-end="11:30" data-category="Past Musicals">
+                                <span class="time">9:00 AM - 11:30 AM</span>
+                                <div class="details">
+                                    <h4>1994 Shake, Rattle & Roll</h4>
+                                    <p>Cinema 2</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="11:00" data-end="13:00" data-category="Past Musicals">
                                 <span class="time">11:00 AM - 1:00 PM</span>
                                 <div class="details">
-                                    <h4>Interactive Mural Painting</h4>
-                                    <p>Quadrangle</p>
+                                    <h4>1982 Man of Steel</h4>
+                                    <p>Cinema 1</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="11:30" data-end="14:00" data-category="Past Musicals">
+                                <span class="time">11:30 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>2015 Wizard of Oz</h4>
+                                    <p>Cinema 2</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Debate -->
-                <div class="accordion-item" data-category="debate">
+                <!-- Sport -->
+                <div class="accordion-item" data-category="sport">
                     <button class="accordion-header">
-                        <span class="category-icon">🎤</span> Debate
+                        <span class="category-icon">⚽</span> Sport
                         <span class="toggle-icon">+</span>
                     </button>
                     <div class="accordion-content">
                         <ul class="timetable">
-                            <li class="event-item" data-start="13:00" data-end="14:00" data-category="Debate">
-                                <span class="time">1:00 PM</span>
+                            <li class="event-item" data-start="07:00" data-end="12:00" data-category="Sport">
+                                <span class="time">7:00 AM - 12:00 PM</span>
                                 <div class="details">
-                                    <h4>Senior Debate Finals</h4>
-                                    <p>Auditorium</p>
+                                    <h4>Basketball Fixtures</h4>
+                                    <p>ISC Court 1</p>
                                 </div>
                             </li>
-                            <li class="event-item" data-start="15:00" data-end="16:00" data-category="Debate">
-                                <span class="time">3:00 PM</span>
+                            <li class="event-item" data-start="08:15" data-end="11:00" data-category="Sport">
+                                <span class="time">8:15 AM - 11:00 AM</span>
                                 <div class="details">
-                                    <h4>Public Speaking Showcase</h4>
-                                    <p>Lecture Theatre</p>
+                                    <h4>Netball Fixtures</h4>
+                                    <p>ISC Court 2</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="08:30" data-end="14:00" data-category="Sport">
+                                <span class="time">8:30 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>Rugby Fixtures</h4>
+                                    <p>Oval</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Sport">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Basketball Hoops</h4>
+                                    <p>Apron</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Sport">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Chess in the Park</h4>
+                                    <p>Upper Quad</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Sport">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Fencing Piste</h4>
+                                    <p>Apron</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Sport">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Rowing Ergos</h4>
+                                    <p>Apron</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="11:00" data-end="12:00" data-category="Sport">
+                                <span class="time">11:00 AM - 12:00 PM</span>
+                                <div class="details">
+                                    <h4>Basketball Fixtures</h4>
+                                    <p>ISC Court 2</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="11:00" data-end="12:00" data-category="Sport">
+                                <span class="time">11:00 AM - 12:00 PM</span>
+                                <div class="details">
+                                    <h4>Senior A vs Alumni Debate</h4>
+                                    <p>Quad Stage</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="12:15" data-end="13:00" data-category="Sport">
+                                <span class="time">12:15 PM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Basketball First V</h4>
+                                    <p>ISC Court 1</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="13:00" data-end="15:00" data-category="Sport">
+                                <span class="time">1:00 PM - 3:00 PM</span>
+                                <div class="details">
+                                    <h4>Basketball Fixtures</h4>
+                                    <p>ISC Courts 1 & 2</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="14:15" data-end="14:30" data-category="Sport">
+                                <span class="time">2:15 PM - 2:30 PM</span>
+                                <div class="details">
+                                    <h4>Official Opening</h4>
+                                    <p>Oval</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="14:30" data-end="15:45" data-category="Sport">
+                                <span class="time">2:30 PM - 3:45 PM</span>
+                                <div class="details">
+                                    <h4>Rugby First XV</h4>
+                                    <p>Oval</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stalls -->
+                <div class="accordion-item" data-category="stalls">
+                    <button class="accordion-header">
+                        <span class="category-icon">🎪</span> Stalls
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="timetable">
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Arcade Games - House Leaders</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Art - Amnesty</h4>
+                                    <p>Upper Quad</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Art - Mara's Cafe</h4>
+                                    <p>Upper Quad</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Banner - Visual Art</h4>
+                                    <p>Upper Quad</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Gryphon's Den - Prefects</h4>
+                                    <p>Upper Quad</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>HQ</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Maker's Market</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Second Hand Books</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="13:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 1:00 PM</span>
+                                <div class="details">
+                                    <h4>Second Hand Clothes - Greenscape</h4>
+                                    <p>Marketplace</p>
+                                </div>
+                            </li>
+                            <li class="event-item" data-start="09:00" data-end="14:00" data-category="Stalls">
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                                <div class="details">
+                                    <h4>Supporters</h4>
+                                    <p>Marketplace</p>
                                 </div>
                             </li>
                         </ul>
