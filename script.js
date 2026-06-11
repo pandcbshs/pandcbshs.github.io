@@ -173,20 +173,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mapSvg) {
         const venueCoordinates = {
-            'Museum': { x: 563, y: 627 },
-            'Upper Quad': { x: 1136, y: 621 },
-            'Quad Stage': { x: 1370, y: 624 },
-            'Main Stage': { x: 670, y: 709 },
-            'Marketplace': { x: 665, y: 808 },
-            'Food Bazaar': { x: 802, y: 631 },
-            'Apron Cafe': { x: 510, y: 366 },
-            'Apron': { x: 562, y: 366 },
-            'Cinema 1': { x: 1110, y: 494 },
-            'Cinema 2': { x: 1180, y: 494 },
-            'ISC Court 1': { x: 340, y: 456 },
-            'ISC Court 2': { x: 410, y: 456 },
-            'ISC Courts 1 & 2': { x: 376, y: 490 },
-            'Oval': { x: 812, y: 226 }
+            'Museum': { x: 563, y: 647 },
+            'Upper Quad': { x: 1136, y: 641 },
+            'Quad Stage': { x: 1370, y: 644 },
+            'Main Stage': { x: 670, y: 729 },
+            'Marketplace': { x: 665, y: 828 },
+            'Food Bazaar': { x: 802, y: 651 },
+            'Apron Cafe': { x: 510, y: 386 },
+            'Apron': { x: 562, y: 386 },
+            'Cinema 1': { x: 1110, y: 514 },
+            'Cinema 2': { x: 1180, y: 514 },
+            'ISC Court 1': { x: 340, y: 476 },
+            'ISC Court 2': { x: 410, y: 476 },
+            'ISC Courts 1 & 2': { x: 376, y: 510 },
+            'Oval': { x: 812, y: 246 }
         };
 
         // Group events by venue
