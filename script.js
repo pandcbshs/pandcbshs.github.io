@@ -283,18 +283,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // --- Drag-to-Scroll implementation for Desktop users ---
+        // --- Drag-to-Scroll implementation for Desktop users (2D panning) ---
         const mapContainer = document.getElementById('map-scroll-container');
         if (mapContainer) {
             let isDown = false;
-            let startX;
-            let scrollLeft;
+            let startX, startY;
+            let scrollLeft, scrollTop;
 
             mapContainer.addEventListener('mousedown', (e) => {
                 isDown = true;
                 mapContainer.classList.add('grabbing');
                 startX = e.pageX - mapContainer.offsetLeft;
+                startY = e.pageY - mapContainer.offsetTop;
                 scrollLeft = mapContainer.scrollLeft;
+                scrollTop = mapContainer.scrollTop;
             });
 
             mapContainer.addEventListener('mouseleave', () => {
@@ -311,8 +313,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!isDown) return;
                 e.preventDefault();
                 const x = e.pageX - mapContainer.offsetLeft;
-                const walk = (x - startX) * 1.5; // Scroll speed scaling factor
-                mapContainer.scrollLeft = scrollLeft - walk;
+                const y = e.pageY - mapContainer.offsetTop;
+                const walkX = (x - startX) * 1.5; // Scroll speed scaling factor
+                const walkY = (y - startY) * 1.5;
+                mapContainer.scrollLeft = scrollLeft - walkX;
+                mapContainer.scrollTop = scrollTop - walkY;
             });
         }
     }
