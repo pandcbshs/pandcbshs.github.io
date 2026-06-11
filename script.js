@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Museum': { x: 563, y: 657 },
             'Upper Quad': { x: 1136, y: 661 },
             'Quad Stage': { x: 1370, y: 664 },
-            'Main Stage': { x: 670, y: 739 },
+            'Main Stage': { x: 670, y: 749 },
             'Marketplace': { x: 665, y: 838 },
             'Food Bazaar': { x: 802, y: 661 },
             'Apron Cafe': { x: 510, y: 346 },
