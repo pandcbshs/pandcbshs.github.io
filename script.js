@@ -173,20 +173,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mapSvg) {
         const venueCoordinates = {
-            'Museum': { x: 140, y: 130 },
-            'Upper Quad': { x: 320, y: 235 },
-            'Quad Stage': { x: 260, y: 180 },
-            'Main Stage': { x: 360, y: 180 },
-            'Marketplace': { x: 150, y: 360 },
-            'Food Bazaar': { x: 110, y: 440 },
-            'Apron Cafe': { x: 265, y: 440 },
-            'Apron': { x: 280, y: 350 },
-            'Cinema 1': { x: 120, y: 230 },
-            'Cinema 2': { x: 160, y: 270 },
-            'ISC Court 1': { x: 585, y: 385 },
-            'ISC Court 2': { x: 685, y: 385 },
-            'ISC Courts 1 & 2': { x: 635, y: 425 },
-            'Oval': { x: 635, y: 220 }
+            'Museum': { x: 280, y: 260 },
+            'Upper Quad': { x: 640, y: 470 },
+            'Quad Stage': { x: 520, y: 360 },
+            'Main Stage': { x: 720, y: 360 },
+            'Marketplace': { x: 300, y: 720 },
+            'Food Bazaar': { x: 220, y: 880 },
+            'Apron Cafe': { x: 530, y: 880 },
+            'Apron': { x: 560, y: 700 },
+            'Cinema 1': { x: 240, y: 460 },
+            'Cinema 2': { x: 320, y: 540 },
+            'ISC Court 1': { x: 1170, y: 770 },
+            'ISC Court 2': { x: 1370, y: 770 },
+            'ISC Courts 1 & 2': { x: 1270, y: 850 },
+            'Oval': { x: 1270, y: 440 }
         };
 
         // Group events by venue
@@ -212,10 +212,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 dot.setAttribute('cx', '0');
                 dot.setAttribute('cy', '0');
-                dot.setAttribute('r', '7');
+                dot.setAttribute('r', '12');
                 dot.setAttribute('fill', 'var(--col-secondary)');
                 dot.setAttribute('stroke', 'white');
-                dot.setAttribute('stroke-width', '2');
+                dot.setAttribute('stroke-width', '3');
 
                 const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
                 title.textContent = `${venueName} (${eventsByVenue[venueName].length} events)`;
@@ -280,6 +280,39 @@ document.addEventListener('DOMContentLoaded', () => {
                         c.setAttribute('fill', 'var(--col-secondary)');
                     }
                 });
+            });
+        }
+
+        // --- Drag-to-Scroll implementation for Desktop users ---
+        const mapContainer = document.getElementById('map-scroll-container');
+        if (mapContainer) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            mapContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                mapContainer.classList.add('grabbing');
+                startX = e.pageX - mapContainer.offsetLeft;
+                scrollLeft = mapContainer.scrollLeft;
+            });
+
+            mapContainer.addEventListener('mouseleave', () => {
+                isDown = false;
+                mapContainer.classList.remove('grabbing');
+            });
+
+            mapContainer.addEventListener('mouseup', () => {
+                isDown = false;
+                mapContainer.classList.remove('grabbing');
+            });
+
+            mapContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - mapContainer.offsetLeft;
+                const walk = (x - startX) * 1.5; // Scroll speed scaling factor
+                mapContainer.scrollLeft = scrollLeft - walk;
             });
         }
     }

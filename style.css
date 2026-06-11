@@ -611,16 +611,26 @@ footer {
 .map-container {
     background: white;
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: 0.5rem;
     box-shadow: var(--shadow);
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: auto;
     position: relative;
     border: 1px solid #e2e8f0;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    max-height: 75vh;
+}
+
+.map-container.grabbing {
+    cursor: grabbing;
+    user-select: none;
 }
 
 .campus-map {
-    width: 100%;
-    height: auto;
+    width: 1200px;
+    height: 813px;
+    max-width: none;
     display: block;
 }
 
