@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'Main Stage': { x: 670, y: 739 },
             'Marketplace': { x: 665, y: 838 },
             'Food Bazaar': { x: 802, y: 661 },
-            'Apron Cafe': { x: 510, y: 396 },
+            'Apron Cafe': { x: 510, y: 346 },
             'Apron': { x: 562, y: 396 },
             'Cinema 1': { x: 1110, y: 464 },
             'Cinema 2': { x: 1180, y: 464 },
