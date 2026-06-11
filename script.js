@@ -183,9 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
             'Apron': { x: 562, y: 396 },
             'Cinema 1': { x: 1110, y: 464 },
             'Cinema 2': { x: 1180, y: 464 },
-            'ISC Court 1': { x: 340, y: 496 },
-            'ISC Court 2': { x: 410, y: 496 },
-            'ISC Courts 1 & 2': { x: 376, y: 530 },
+            'ISC Court 1': { x: 340, y: 506 },
+            'ISC Court 2': { x: 410, y: 506 },
+            'ISC Courts 1 & 2': { x: 376, y: 540 },
             'Oval': { x: 812, y: 256 }
         };
 
