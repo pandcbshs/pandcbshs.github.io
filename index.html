@@ -19,7 +19,11 @@
     <header class="hero" id="home">
         <div class="hero-content">
             <div class="hero-image-container">
-                <img src="assets/hero_image.jpg" alt="State High Day" class="hero-image" id="hero-image" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/hero_image.jpg">
+                    <source media="(min-width: 769px)" srcset="assets/hero_image_desktop.jpg">
+                    <img src="assets/hero_image_desktop.jpg" alt="State High Day" class="hero-image" id="hero-image" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+                </picture>
             </div>
             <div class="hero-text-container">
                 <!-- Fallback text logo if image is not found -->
@@ -70,13 +74,18 @@
                     <input type="range" min="7" max="18" step="0.5" value="9" id="slider-start">
                     <input type="range" min="7" max="18" step="0.5" value="17" id="slider-end">
                     <div class="slider-labels">
-                        <span>7 AM</span>
-                        <span>9 AM</span>
-                        <span>11 AM</span>
-                        <span>1 PM</span>
-                        <span>3 PM</span>
-                        <span>5 PM</span>
-                        <span>6 PM</span>
+                        <span style="left: 0%;">7<br>AM</span>
+                        <span style="left: 9.09%;">8</span>
+                        <span style="left: 18.18%;">9</span>
+                        <span style="left: 27.27%;">10</span>
+                        <span style="left: 36.36%;">11</span>
+                        <span style="left: 45.45%;">12<br>PM</span>
+                        <span style="left: 54.54%;">1</span>
+                        <span style="left: 63.64%;">2</span>
+                        <span style="left: 72.73%;">3</span>
+                        <span style="left: 81.82%;">4</span>
+                        <span style="left: 90.91%;">5</span>
+                        <span style="left: 100%;">6<br>PM</span>
                     </div>
                 </div>
             </div>
