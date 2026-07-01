@@ -56,6 +56,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-content {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,12 +161,14 @@ h1, h2, h3, h4 {
     text-decoration: none;
 }
 
-.nav-btn:hover {
-    background: var(--col-secondary);
-    border-color: var(--col-secondary);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
+@media (hover: hover) {
+    .nav-btn:hover {
+        background: var(--col-secondary);
+        border-color: var(--col-secondary);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-hover);
+    }
 }
 
 .nav-btn.active {
@@ -795,8 +798,8 @@ footer {
     .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
-        padding: 2rem 0;
+        gap: 0;
+        padding: 0;
     }
     
     .hero-image-container {
@@ -805,7 +808,7 @@ footer {
         flex: none;
         box-shadow: none;
         margin: 0;
-        padding: 0 35px;
+        padding: 0;
         background-color: white;
     }
 
@@ -821,7 +824,8 @@ footer {
         display: block;
         color: white;
         padding: 0 1.5rem;
-        margin-top: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
         z-index: 2;
     }
     
