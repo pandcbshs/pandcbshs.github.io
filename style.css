@@ -182,6 +182,17 @@ h1, h2, h3, h4 {
     box-shadow: var(--shadow-hover);
 }
 
+.nav-btn.active {
+    background: var(--col-secondary);
+    border-color: var(--col-secondary);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-1px);
+}
+
+.nav-btn.active:hover {
+    transform: translateY(-3px);
+}
+
 .nav-btn svg {
     width: 24px;
     height: 24px;

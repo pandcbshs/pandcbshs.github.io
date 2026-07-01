@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- Toggle Sections (Tabs) ---
-    window.toggleSection = function(sectionId) {
+    window.toggleSection = function(sectionId, shouldScroll = true) {
         const sections = ['whats-on', 'sponsor-us', 'time-schedule', 'event-map'];
         
         // Hide all sections except the target
@@ -12,22 +12,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
+        // Toggle active class on nav buttons
+        document.querySelectorAll('.quick-nav .nav-btn').forEach(btn => {
+            const onclickAttr = btn.getAttribute('onclick') || '';
+            if (onclickAttr.includes(`'${sectionId}'`)) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.classList.remove('hidden-section');
             
             // Allow display block to render before scrolling
-            setTimeout(() => {
-                const navHeight = document.querySelector('.quick-nav').offsetHeight;
-                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }, 50);
+            if (shouldScroll) {
+                setTimeout(() => {
+                    const navHeight = document.querySelector('.quick-nav').offsetHeight;
+                    const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 50);
+            }
         }
     };
+
+    // Show 'whats-on' by default on page load and highlight its button without scrolling
+    toggleSection('whats-on', false);
 
     // --- Accordion Logic ---
     const accordionHeaders = document.querySelectorAll('.accordion-header');
