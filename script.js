@@ -175,6 +175,39 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderStart.addEventListener('input', updateSlider);
         sliderEnd.addEventListener('input', updateSlider);
         
+        // Dynamic z-index handling to prevent overlapping thumbs blocking each other
+        function handleOverlay(e) {
+            const valStart = parseFloat(sliderStart.value);
+            const valEnd = parseFloat(sliderEnd.value);
+            
+            if (valEnd - valStart <= 1) {
+                const rect = sliderStart.getBoundingClientRect();
+                const clientX = e.clientX || (e.touches && e.touches[0].clientX);
+                if (!clientX) return;
+                const position = (clientX - rect.left) / rect.width;
+                const min = parseFloat(sliderStart.min);
+                const max = parseFloat(sliderStart.max);
+                const hoverValue = min + position * (max - min);
+                
+                if (Math.abs(hoverValue - valStart) < Math.abs(hoverValue - valEnd)) {
+                    sliderStart.style.zIndex = '4';
+                    sliderEnd.style.zIndex = '3';
+                } else {
+                    sliderEnd.style.zIndex = '4';
+                    sliderStart.style.zIndex = '3';
+                }
+            } else {
+                sliderStart.style.zIndex = '3';
+                sliderEnd.style.zIndex = '3';
+            }
+        }
+
+        const sliderContainer = document.querySelector('.time-slider-container');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mousemove', handleOverlay);
+            sliderContainer.addEventListener('touchstart', handleOverlay, { passive: true });
+        }
+        
         // Initial run
         updateSlider();
     }
