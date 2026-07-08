@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD7PEG5S0X"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GD7PEG5S0X');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>State High Day</title>
@@ -52,7 +61,7 @@
         </button>
         <button class="nav-btn" onclick="toggleSection('sponsor-us')">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            Sponsor Us
+            Sponsors
         </button>
         <a class="nav-btn" href="https://signup.com/go/KEtkeef" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, '_blank'); this.blur(); return false;">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><line x1="17" y1="8" x2="21" y2="8"></line><line x1="19" y1="6" x2="19" y2="10"></line></svg>
@@ -698,8 +707,14 @@
                 </a>
             </div>
 
-            <h3 class="subsection-title">Our Proud Sponsors</h3>
+            <h3 class="subsection-title">Thank you to our event sponsors</h3>
             <div class="sponsor-grid">
+                <div class="sponsor-card gold">
+                    <h4>Gold Sponsors</h4>
+                    <div class="sponsor-logo-grid">
+                        <img src="assets/placepsb.jpeg" alt="Place Estate Agents logo">
+                    </div>
+                </div>
                 <div class="sponsor-card silver">
                     <h4>Silver Sponsors</h4>
                     <div class="sponsor-logo-grid">
@@ -721,6 +736,32 @@
     </main>
 
     <footer>
+        <div class="footer-sponsors">
+            <p class="footer-sponsors-title">Event Sponsors</p>
+            <div class="footer-sponsor-logos">
+                <!-- Gold Sponsor -->
+                <div class="footer-sponsor-tier gold">
+                    <span class="footer-tier-label gold">Gold</span>
+                    <img src="assets/placepsb.jpeg" alt="Place Estate Agents logo" class="footer-logo">
+                </div>
+                
+                <!-- Silver Sponsors -->
+                <div class="footer-sponsor-tier silver">
+                    <span class="footer-tier-label silver">Silver</span>
+                    <img src="assets/barbara.png" alt="Dr Barbara O'Shea MP logo" class="footer-logo">
+                    <img src="assets/traders_in_purple_logo.jpg" alt="Traders in Purple logo" class="footer-logo">
+                </div>
+                
+                <!-- Bronze Sponsors -->
+                <div class="footer-sponsor-tier bronze">
+                    <span class="footer-tier-label bronze">Bronze</span>
+                    <img src="assets/studio_pilates.png" alt="Studio Pilates logo" class="footer-logo">
+                    <img src="assets/trina.png" alt="Trina logo" class="footer-logo">
+                    <img src="assets/gladstone_road_garage.png" alt="Gladstone Road Garage logo" class="footer-logo">
+                    <img src="assets/renee.jpg" alt="Renee Coffey MP logo" class="footer-logo">
+                </div>
+            </div>
+        </div>
         <p>&copy; 2026 State High Day. All rights reserved.</p>
     </footer>
 

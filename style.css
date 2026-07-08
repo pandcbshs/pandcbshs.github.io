@@ -563,6 +563,11 @@ main {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.sponsor-card.gold {
+    background: rgba(227, 168, 43, 0.15);
+    border-color: var(--col-accent);
+}
+
 .sponsor-card.silver {
     background: rgba(221, 222, 229, 0.75);
     border-color: rgba(65, 75, 95, 0.16);
@@ -641,10 +646,77 @@ main {
 /* ==== Footer ==== */
 footer {
     text-align: center;
-    padding: 22px 2rem;
+    padding: 2.5rem 2rem 1.5rem;
     background: var(--col-primary);
     color: rgba(255,255,255,0.7);
     font-size: 0.9rem;
+}
+
+.footer-sponsors {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-sponsors-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.25rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+}
+
+.footer-sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-sponsor-tier {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-tier-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.footer-tier-label.gold {
+    color: var(--col-accent);
+}
+
+.footer-tier-label.silver {
+    color: #cbd5e1;
+}
+
+.footer-tier-label.bronze {
+    color: #fdba74; /* warm bronze/amber color for readability on navy blue */
+}
+
+.footer-logo {
+    height: 48px;
+    max-width: 140px;
+    object-fit: contain;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.1);
 }
 
 
