@@ -927,4 +927,16 @@ footer {
         flex-direction: column;
         gap: 0.5rem;
     }
+    
+    .footer-sponsor-tier.bronze {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .footer-sponsor-tier.bronze .footer-tier-label {
+        grid-row: span 2;
+    }
 }
+
