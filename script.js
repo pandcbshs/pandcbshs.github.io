@@ -221,20 +221,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mapSvg) {
         const venueCoordinates = {
-            'Museum': { x: 563, y: 657 },
-            'Upper Quad': { x: 1136, y: 661 },
-            'Quad Stage': { x: 1370, y: 664 },
-            'Main Stage': { x: 670, y: 749 },
-            'Marketplace': { x: 665, y: 838 },
-            'Food Bazaar': { x: 802, y: 661 },
-            'Apron Cafe': { x: 510, y: 346 },
-            'Apron': { x: 562, y: 396 },
-            'Cinema 1': { x: 1110, y: 464 },
-            'Cinema 2': { x: 1180, y: 464 },
-            'ISC Court 1': { x: 340, y: 506 },
-            'ISC Court 2': { x: 410, y: 506 },
-            'ISC Courts 1 & 2': { x: 376, y: 540 },
-            'Oval': { x: 812, y: 256 }
+            'A Block': { x: 1329, y: 892 },
+            'Apron': { x: 561, y: 379 },
+            'BBQ': { x: 1097, y: 552 },
+            'Canteen': { x: 826, y: 621 },
+            'Cinema 1': { x: 1086, y: 360 },
+            'Cinema 2': { x: 1086, y: 405 },
+            'ISC Court 1': { x: 309, y: 536 },
+            'ISC Court 2': { x: 416, y: 440 },
+            'Kiosk': { x: 625, y: 489 },
+            'Main Stage': { x: 666, y: 743 },
+            'Marketplace': { x: 658, y: 854 },
+            'Museum': { x: 557, y: 648 },
+            'PLACE South Brisbane OVAL': { x: 803, y: 183 },
+            'Quad Stage': { x: 1204, y: 765 },
+            'Upper Quad': { x: 1230, y: 649 }
         };
 
         // Group events by venue
