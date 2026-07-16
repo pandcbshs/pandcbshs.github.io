@@ -934,6 +934,11 @@ footer {
         gap: 0.5rem;
     }
     
+    .footer-sponsor-tier {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .footer-sponsor-tier.bronze {
         display: grid;
         grid-template-columns: auto 1fr 1fr;
